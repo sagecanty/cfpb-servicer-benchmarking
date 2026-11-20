@@ -2,7 +2,9 @@
 
 > A naive portfolio-wide relief-rate comparison flags the wrong company. Using
 > 391,728 real CA consumer complaints (Jan 2024–Apr 2025), this project finds why,
-> and what to compare against instead.
+> and what to compare against instead. It also evaluates whether an LLM is safe to
+> use in complaint triage, and in what role: see
+> [AI evaluation & risk](#ai-evaluation--risk-should-an-llm-triage-these-complaints).
 
 **Deliverables:** [Executive Brief — misrouting](docs/05_executive_brief.md) · [Intake Redesign (as-is/to-be)](docs/06_intake_redesign_flow.md) · [Decision Memo](docs/01_decision_memo.md) · [BRD](docs/02_brd.md) · [KPI Dictionary](docs/03_kpi_dictionary.md) · [Data Notes](docs/04_data_notes.md) · [Live Dashboard](https://public.tableau.com/app/profile/sez.ozrn/viz/CFPBCAServicerBenchmarking/Dashboard1)
 
@@ -51,6 +53,24 @@ scoped) for one quarter before extending. Full case in the
 
 ---
 
+## AI evaluation & risk: should an LLM triage these complaints?
+
+The BRD's future state proposed AI-assisted complaint triage. Before recommending
+it, this repo evaluates the model the way a deployment decision needs: by where it
+fails and why, not just a headline accuracy number. The evals changed the
+recommendation, which is the point of running them.
+
+| AI risk | How it was tested | What it changed |
+|---|---|---|
+| **A headline accuracy hides weak segments** | 500-narrative eval, stratified 50 per category ([evals/](evals/README.md)) | 79.8% overall, but **44%–94% by category**. No single "the model is X% accurate" claim; per-category validation is a deployment gate |
+| **The ground truth is wrong, not the model** | Disagreements hand-inspected against CFPB's own category definitions | In the 44% category, the model was often *more* right than the official label: the eval exposed label noise in the reference data |
+| **One model's verdict is over-trusted** | Full-census audit (504 complaints) with two independent probes that never see each other's answers, plus an uncertainty band where they disagree ([evals/misrouting/](evals/misrouting/README.md)) | **55.8% misroute** on the strict both-probes standard, 66.9% including the band. Reported as a range, not a point |
+| **The sample isn't the production population** | Narrative opt-in rates measured per product (25.3%–73.1%) | Results framed as a feasibility signal, not a deployment accuracy estimate |
+| **An unvalidated model drives a real-world change** | Blind human precision-audit harness with a written labeling rule and a hard-case rule ([precision_audit/](evals/misrouting/precision_audit/)) | Taxonomy change gated on human adjudication. *Harness built; labeling pending* |
+| **Too much autonomy** | Error profile above | Recommended role: a **QA layer that flags disagreements for human review**, not an autonomous router that reassigns categories |
+
+---
+
 ## Dashboard
 
 ![CFPB CA Servicer Benchmarking dashboard — relief rate by product and student-loan servicer scorecard](dashboard/screenshots/01_dashboard_full.png)
@@ -71,6 +91,9 @@ scoped) for one quarter before extending. Full case in the
 | `sql/10_*.sql` | Core analysis: routing/timeliness, relief outcomes (findings F1–F3) |
 | `sql/20_kpi_within_category_deviation.sql` | KPI-04 implemented — the within-category scorecard the memo recommends, with the verified flag output in the header |
 | `src/ingest.py` | CA-scoped CFPB API ingestion (search_after pagination, documented API workarounds) |
+| `evals/` | LLM classification eval: stratified sample, per-category agreement, confusion breakdown |
+| `evals/misrouting/` | Full-census misrouting audit with two independent probes and an uncertainty band |
+| `evals/misrouting/precision_audit/` | Blind human-adjudication harness that gates any taxonomy change |
 
 ## A note on how this was built
 
