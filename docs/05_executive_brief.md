@@ -23,9 +23,10 @@ that was never well-defined at the point of collection.
 ## The problem, quantified
 
 Of 504 CA complaints filed under "Debt or credit management" with a published
-narrative (Jan 2024–Jun 2026), **55.8% do not describe credit counseling, debt
-management plans, debt settlement, or credit repair services** — the things this
-category is defined to cover — measured by two independent classification checks
+narrative (Jan 2024–Jun 2026), **55.8% are not about a company selling debt or
+credit relief** (credit repair, debt settlement, mortgage modification or
+foreclosure avoidance, student loan debt relief: the category's four
+sub-products), measured by two independent classification checks
 that had to agree before counting a complaint as miscategorized (`evals/misrouting/`).
 An additional 11.1% is a genuine judgment call between the two checks. Only 33.1%
 of the category is unambiguously what it claims to be.
@@ -43,8 +44,8 @@ reports — inherits this error for as long as intake stays broken.
    not a cherry-picked subset — 504 complaints, Jan 2024–Jun 2026
    (`evals/misrouting/pull_dcm.py`).
 2. Two-probe method: a 10-way category classifier (same method as the earlier
-   50-narrative feasibility check) plus an independent binary check against CFPB's
-   own written definition of the category, with no visibility into each other's
+   50-narrative feasibility check) plus an independent binary check against a written definition of
+   the category (narrower than CFPB's own; see `evals/misrouting/` → Definition gap), with no visibility into each other's
    answer (`evals/misrouting/classify_dcm.py`). Requiring agreement between two
    differently-designed checks is a stricter bar than either check alone — the
    55.8% figure is the lower-confidence-bound reading, not the most favorable one.
@@ -72,11 +73,13 @@ step, not an afterthought.
 
 ## Risks & open questions
 
-- **The 55.8% is a directional, not certified, figure.** Hand-inspection covered 15
-  of 504 complaints (3.0%) to confirm the probes discriminate sensibly — this is
-  not a blinded precision audit against human-labeled ground truth. A formal blind
-  adjudication of a proper random sample is the recommended validation step before
-  this number is used to justify a specific budget or headcount ask.
+- **The 55.8% is human-verified as a floor, by one adjudicator.** A blind precision
+  audit (60-case stratified random sample, verdicts hidden while labeling) found
+  every sampled double-flagged complaint was a real misroute: 35/35, 100% precision
+  (95% CI 90–100%). It also found misroutes the probes missed, putting the
+  stratified estimate near 71% (range 58–81%). The adjudicator is the author, so
+  a second independent labeler is the validation step before this number
+  justifies a specific budget or headcount ask (`evals/misrouting/precision_audit/`).
 - **Narrative-only sample.** This population is complaints where the consumer opted
   in to publish a narrative; opt-in rates vary 25–73% by product (`docs/04_data_notes.md`).
   Complaints without a narrative aren't represented here.

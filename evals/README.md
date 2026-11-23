@@ -92,7 +92,9 @@ The "next step if pursued" below was carried out — see
 [misrouting/README.md](misrouting/README.md). Full census (504 CA
 complaints, not a 50-row sample), two independent classification probes:
 **55.8% high-confidence misroute** (both probes agree), rising to 66.9%
-including the uncertainty band. Hand-inspection shows the category
+including the uncertainty band. A blind human precision audit then confirmed
+35/35 sampled flags (100% precision, CI 90–100%) and put the true rate near
+71%, so 55.8% is a floor. Hand-inspection shows the category
 functioning as a general catch-all rather than absorbing one specific
 neighbor — a bigger and differently-shaped finding than this section's
 original 44%.

@@ -40,7 +40,9 @@ timely-response rates by product and by company using SQL (DuckDB).
    outlier at 44% agreement, pointing at an intake-labeling problem rather than
    model error. A full-census audit of that category (504 complaints, two
    independent probes) then sized it: **55.8% of the category doesn't belong in
-   it** — and hand-inspection showed it acts as a general catch-all (FCRA
+   it** — and a blind human precision audit confirmed the flags (35/35, 100%
+   precision, CI 90–100%) and showed 55.8% is a floor (stratified estimate
+   ~71%). Hand-inspection showed it acts as a general catch-all (FCRA
    disputes, fraud, mortgage servicing), not a debt-collection dump as the
    sample first suggested. Method + results:
    [evals/misrouting/](evals/misrouting/README.md) · exec-facing version:

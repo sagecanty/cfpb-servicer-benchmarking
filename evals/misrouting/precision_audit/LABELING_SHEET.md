@@ -38,69 +38,69 @@ CSV open alongside. **Label on the full narrative, not the gist.** The gists wer
 AI-written and some already lean toward a category; treat them as a reminder of
 which case is which, nothing more.)
 
-My hard-case rule: _______________________________________________
+Hard-case rule as applied in the labels: a scam relief seller still `belongs` (CFPB files by what the company claims to sell). A collector or bureau upselling "dispute" services is a `misroute`.
 
 ---
 
-C01 → __________   FCRA "block and remove from my report"
-C02 → __________   Credit Saint — credit-repair company, poor service
-C03 → __________   "New Education Relief" debt-relief — scam / SSN access
-C04 → __________   Consumer Credit Counseling Foundation — won't cancel
-C05 → __________   receiving checks, fraud confirmed, reimbursement
-C06 → __________   Beyond Finance — debt-settlement account mismanaged
-C07 → __________   ClearOne Advantage — debt-settlement program
-C08 → __________   can't reach TransUnion to report fraud
-C09 → __________   TransUnion rep told me to file with FTC
-C10 → __________   TekCollect — debt collection, disputed under FDCPA
-C11 → __________   Freedom Debt Relief — set up account, "scamming me"
-C12 → __________   Creedence Resource Mgmt — collection on debt not owed
-C13 → __________   IC Systems — collection on old house/utility debt
-C14 → __________   Jefferson Capital — collection, possible SSN misuse
-C15 → __________   Money Network — benefits debit card hacked
-C16 → __________   MoneyLion app — transfer error, unwanted loan
-C17 → __________   Unlimited Credit — credit-repair contract, no results
-C18 → __________   old company overcharged, sold my info
-C19 → __________   Boostify — debt-settlement, coached to commit fraud
-C20 → __________   Americor — debt-settlement, extra drafts/fees
-C21 → __________   FDCPA cease-and-desist letter to a collector
-C22 → __________   Jefferson Capital — collection on credit report
-C23 → __________   missed Target credit card payment, can I still use it
-C24 → __________   collector calling family re: Acima lease, harassment
-C25 → __________   TransUnion credit monitoring + cyber breach
-C26 → __________   Columbia Debt Recovery — collection, court-order breach
-C27 → __________   FCRA reinvestigation demand, remove from file
-C28 → __________   Experian wrong DOB, can't access credit report
-C29 → __________   bank fraud, no translator, stolen debit card funds
-C30 → __________   diffuse credit/bank "targeting" narrative
-C31 → __________   Kick Off — missed payments, won't remove negative marks
-C32 → __________   Account Resolution Services — called family, FDCPA
-C33 → __________   GoodLeap — predatory home-improvement loan
-C34 → __________   FCRA "block and remove off my report"
-C35 → __________   Midland Credit — collection/lawsuit, credit not reported
-C36 → __________   repairman stole card, fraudulent charges, card issuer
-C37 → __________   wrong payment-date info hurt my credit
-C38 → __________   "relentless calls 10 in a row" — harassment
-C39 → __________   was sick a year, they didn't close my account
-C40 → __________   $99/mo credit-repair fees, nothing done
-C41 → __________   Lexington Law — credit-repair, removed nothing
-C42 → __________   NY "fix my debt" program — no settlements, being sued
-C43 → __________   Credit Karma — inaccurate loan offers, hard pull
-C44 → __________   FCRA "unauthorized info, block and remove"
-C45 → __________   Portfolio Recovery — collection on charged-off debt
-C46 → __________   "Experian employee" upfront-fee credit scam
-C47 → __________   Pep Boys — unwanted credit inquiries after tire visit
-C48 → __________   SN Servicing — mortgage modification denied
-C49 → __________   FCRA "block and remove" (Equifax et al.)
-C50 → __________   dental-financing medical-debt FCRA/FCBA dispute
-C51 → __________   FCRA block-and-remove, statute citations
-C52 → __________   Comenity/credit-card score dropping, disputes
-C53 → __________   three fraudulent accounts, remove from credit
-C54 → __________   Capital One closed account, no payment plan
-C55 → __________   PennyMac — mortgage forbearance wrongly closed
-C56 → __________   Alleviate — debt-consolidation, hidden 25% fee, "scam"
-C57 → __________   SSN compromised, fraudulent accounts opened
-C58 → __________   Credit Karma — "karma guarantee" loan not honored
-C59 → __________   Midland Credit — collection + "dispute all" upsell
-C60 → __________   TomoBoost subscription won't cancel, billing
+C01 → misroute     FCRA "block and remove from my report"
+C02 → belongs      Credit Saint — credit-repair company, poor service
+C03 → belongs      "New Education Relief" debt-relief — scam / SSN access
+C04 → belongs      Consumer Credit Counseling Foundation — won't cancel
+C05 → misroute     receiving checks, fraud confirmed, reimbursement
+C06 → belongs      Beyond Finance — debt-settlement account mismanaged
+C07 → belongs      ClearOne Advantage — debt-settlement program
+C08 → misroute     can't reach TransUnion to report fraud
+C09 → misroute     TransUnion rep told me to file with FTC
+C10 → misroute     TekCollect — debt collection, disputed under FDCPA
+C11 → belongs      Freedom Debt Relief — set up account, "scamming me"
+C12 → misroute     Creedence Resource Mgmt — collection on debt not owed
+C13 → misroute     IC Systems — collection on old house/utility debt
+C14 → misroute     Jefferson Capital — collection, possible SSN misuse
+C15 → misroute     Money Network — benefits debit card hacked
+C16 → misroute     MoneyLion app — transfer error, unwanted loan
+C17 → belongs      Unlimited Credit — credit-repair contract, no results
+C18 → belongs      old company overcharged, sold my info
+C19 → belongs      Boostify — debt-settlement, coached to commit fraud
+C20 → belongs      Americor — debt-settlement, extra drafts/fees
+C21 → misroute     FDCPA cease-and-desist letter to a collector
+C22 → misroute     Jefferson Capital — collection on credit report
+C23 → misroute     missed Target credit card payment, can I still use it
+C24 → misroute     collector calling family re: Acima lease, harassment
+C25 → misroute     TransUnion credit monitoring + cyber breach
+C26 → misroute     Columbia Debt Recovery — collection, court-order breach
+C27 → misroute     FCRA reinvestigation demand, remove from file
+C28 → misroute     Experian wrong DOB, can't access credit report
+C29 → misroute     bank fraud, no translator, stolen debit card funds
+C30 → misroute     diffuse credit/bank "targeting" narrative
+C31 → misroute     Kick Off — missed payments, won't remove negative marks
+C32 → misroute     Account Resolution Services — called family, FDCPA
+C33 → misroute     GoodLeap — predatory home-improvement loan
+C34 → misroute     FCRA "block and remove off my report"
+C35 → misroute     Midland Credit — collection/lawsuit, credit not reported
+C36 → misroute     repairman stole card, fraudulent charges, card issuer
+C37 → misroute     wrong payment-date info hurt my credit
+C38 → misroute     "relentless calls 10 in a row" — harassment
+C39 → misroute     was sick a year, they didn't close my account
+C40 → belongs      $99/mo credit-repair fees, nothing done
+C41 → belongs      Lexington Law — credit-repair, removed nothing
+C42 → belongs      NY "fix my debt" program — no settlements, being sued
+C43 → misroute     Credit Karma — inaccurate loan offers, hard pull
+C44 → misroute     FCRA "unauthorized info, block and remove"
+C45 → misroute     Portfolio Recovery — collection on charged-off debt
+C46 → misroute     "Experian employee" upfront-fee credit scam
+C47 → misroute     Pep Boys — unwanted credit inquiries after tire visit
+C48 → misroute     SN Servicing — mortgage modification denied
+C49 → misroute     FCRA "block and remove" (Equifax et al.)
+C50 → misroute     dental-financing medical-debt FCRA/FCBA dispute
+C51 → misroute     FCRA block-and-remove, statute citations
+C52 → misroute     Comenity/credit-card score dropping, disputes
+C53 → misroute     three fraudulent accounts, remove from credit
+C54 → misroute     Capital One closed account, no payment plan
+C55 → misroute     PennyMac — mortgage forbearance wrongly closed
+C56 → belongs      Alleviate — debt-consolidation, hidden 25% fee, "scam"
+C57 → misroute     SSN compromised, fraudulent accounts opened
+C58 → misroute     Credit Karma — "karma guarantee" loan not honored
+C59 → misroute     Midland Credit — collection + "dispute all" upsell
+C60 → misroute     TomoBoost subscription won't cancel, billing
 ```
 ```
