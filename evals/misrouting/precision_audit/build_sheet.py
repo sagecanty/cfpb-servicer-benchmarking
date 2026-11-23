@@ -68,12 +68,9 @@ def main():
 
     print(f"Wrote adjudication_sheet.csv ({len(picked)} cases, verdicts hidden)")
     print("Wrote answer_key.csv (do NOT open before labeling)")
-    print("\nHow to label: open adjudication_sheet.csv, and for each row put")
-    print("  'belongs'  = the complaint really is about credit counseling / debt")
-    print("               management plan / debt settlement / credit repair SERVICES")
-    print("  'misroute' = it's about something else (collection, credit report,")
-    print("               fraud, mortgage, an account, etc.)")
-    print("Then run score.py.")
+    print("\nHow to label: follow the rule in LABELING_SHEET.md (CFPB's four")
+    print("sub-products; relief seller -> 'belongs', lender/servicer/collector/")
+    print("bureau -> 'misroute'), fill the LABEL column, then run score.py.")
 
 
 if __name__ == "__main__":

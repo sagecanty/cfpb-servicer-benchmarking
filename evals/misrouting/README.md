@@ -17,10 +17,11 @@ the FULL population (not a sample) to size the problem.
   cross-visibility:
   - **Probe A** — the exact 10-way closed-set classifier from the Phase 2
     eval (same prompt, same model). Flags if predicted category ≠ DCM.
-  - **Probe B** — a binary yes/no against CFPB's own written definition of
-    the category (credit counseling / debt management plan / debt
+  - **Probe B** — a binary yes/no against a written definition of the
+    category (credit counseling / debt management plan / debt
     settlement / credit repair *services*), asked without showing the
-    category list or Probe A's answer. Flags on "NO."
+    category list or Probe A's answer. Flags on "NO." *This definition is
+    narrower than CFPB's own. See [Definition gap](#definition-gap).*
 - **Verdict per complaint:** both probes agree it's a misroute → high
   confidence; only one flags → uncertainty band; neither flags → belongs.
 
@@ -66,6 +67,32 @@ Hand-inspection covered 15 of 504 (3.0%), not a formal precision audit against
 a blinded human-labeled ground truth. This is directional confirmation that
 the probes are discriminating sensibly, not a certified accuracy figure — flag
 this the same way the original eval flagged its own honest scope.
+
+## Definition gap
+
+*Found 2026-11-22 while preparing the blind precision audit, before any case
+was labeled.*
+
+CFPB's complaint form lists four sub-products under "Debt or credit
+management": credit repair services, debt settlement, **mortgage modification
+or foreclosure avoidance**, and **student loan debt relief**. Probe B's prompt
+covered the first two (plus credit counseling / debt management plans) and left
+out the last two. A complaint about a foreclosure-rescue or student-loan
+"forgiveness" company is a legitimate member of this category, but Probe B
+would answer "NO" and the complaint could be counted as a misroute.
+
+**Size of the exposure:** of the 281 both-probe misroutes, 28 had Probe A
+predicting *Mortgage* (24) or *Student loan* (4). That's where these false
+flags would sit. Not all 28 are relief companies; many are ordinary servicer
+disputes, which really are misroutes. Worst case, if every one of them was a
+relief company, the strict figure falls from 55.8% to 50.2% (253/504). The
+"majority" headline is plausible but no longer assumed.
+
+**What changed:** the blind audit's labeling rule now uses CFPB's four
+sub-products, with an explicit relief-seller vs. lender/servicer test
+(`precision_audit/LABELING_SHEET.md`). Flag precision is therefore measured
+against the official taxonomy, so any probe false-positives from this gap show
+up in the certified number instead of being baked into it.
 
 ## Recommendation
 

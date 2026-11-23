@@ -1,11 +1,31 @@
 # Precision Audit — Labeling Sheet
 
-**Rule.** `belongs` = the complaint is about a company the consumer *hired to
-manage, settle, or repair their debt/credit* (debt settlement firm, credit-repair
-company, credit counseling service), and the gripe is about that service.
+**Rule.** `belongs` = the complaint is about a *third-party company selling
+relief* from a debt or credit problem, and the gripe is about that service.
+That's CFPB's four sub-products for this category (complaint form, Oct 2026):
+
+- **Credit repair services**
+- **Debt settlement** (debt relief / consolidation programs; credit counseling
+  and debt management plans count here too)
+- **Mortgage modification or foreclosure avoidance**: a company offering to get
+  a loan modified or stop a foreclosure. *Not* the mortgage lender or servicer.
+- **Student loan debt relief**: a company offering forgiveness or consolidation
+  help. *Not* the student loan servicer.
+
 `misroute` = the real subject is anything else (credit-report/FCRA dispute, debt
-collection, fraud/identity theft, mortgage, bank/card/account issue, a loan, etc.)
-— even when debt or credit is involved.
+collection, fraud/identity theft, bank/card/account issue, a lender or servicer's
+own handling of a loan, etc.), even when debt or credit is involved.
+
+**The one-question test:** is the company being complained about *selling relief*
+from the debt, or is it the company that *holds, services, collects, or reports*
+the debt? Relief seller → `belongs`. Everyone else → `misroute`.
+
+> **Rule revised 2026-11-22, before any case was labeled.** The original rule
+> (and Probe B's prompt) left out two of CFPB's four sub-products: mortgage
+> modification / foreclosure avoidance and student loan debt relief. Labeling
+> against the official taxonomy means the audit measures the probes against
+> CFPB's definition, not against the probes' own narrower one. See
+> `../README.md` → *Definition gap*.
 
 **Hard-case rule (decide once, apply consistently):** a debt-settlement/relief
 company that turns out to be a *scam* — is it a debt-management-service complaint
@@ -14,7 +34,9 @@ company that turns out to be a *scam* — is it a debt-management-service compla
 Fill each blank with `belongs` or `misroute`. Then transfer to
 `adjudication_sheet.csv`'s LABEL column and run `score.py`.
 (One-line reminders of each case's gist are here so you don't have to keep the
-CSV open alongside — but label on the full narrative if a gist feels thin.)
+CSV open alongside. **Label on the full narrative, not the gist.** The gists were
+AI-written and some already lean toward a category; treat them as a reminder of
+which case is which, nothing more.)
 
 My hard-case rule: _______________________________________________
 
