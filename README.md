@@ -68,7 +68,7 @@ recommendation, which is the point of running them.
 | **The ground truth is wrong, not the model** | Disagreements hand-inspected against CFPB's own category definitions | In the 44% category, the model was often *more* right than the official label: the eval exposed label noise in the reference data |
 | **One model's verdict is over-trusted** | Full-census audit (504 complaints) with two independent probes that never see each other's answers, plus an uncertainty band where they disagree ([evals/misrouting/](evals/misrouting/README.md)) | **55.8% misroute** on the strict both-probes standard, 66.9% including the band. Reported as a range, not a point |
 | **The sample isn't the production population** | Narrative opt-in rates measured per product (25.3%–73.1%) | Results framed as a feasibility signal, not a deployment accuracy estimate |
-| **An unvalidated model drives a real-world change** | Blind human precision-audit harness with a written labeling rule and a hard-case rule ([precision_audit/](evals/misrouting/precision_audit/)) | Taxonomy change gated on human adjudication. *Harness built; labeling pending* |
+| **An unvalidated model drives a real-world change** | Blind human precision audit with a written labeling rule and a hard-case rule ([precision_audit/](evals/misrouting/precision_audit/)) | Taxonomy change gated on human adjudication. **Done: 35/35 both-probe flags confirmed** (CI 90–100%); 55.8% is a floor, stratified estimate ~71% ([results](evals/misrouting/precision_audit/results.md)) |
 | **Too much autonomy** | Error profile above | Recommended role: a **QA layer that flags disagreements for human review**, not an autonomous router that reassigns categories |
 
 ---
